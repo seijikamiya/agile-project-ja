@@ -44,12 +44,12 @@ def multi():
     """
     num1 = input("乗算される最初の数値を入力してください: ")
     num2 = input("乗算する次の数値を入力してください: ")
-    if num1.isdecimal() and num2.isdecimal():
+    if is_numeric(num1) and is_numeric(num2):
         result = float(num1) * float(num2)
         print(f"計算結果 : {num1} * {num2} = {result} ") 
         return result
     else:
-        return "入力値が正しくありません"
+        print("入力値が正しくありません")
 
 def exp():
     """
@@ -57,12 +57,12 @@ def exp():
     """
     num1 = input("指数計算したい底の数値を入力してください: ")
     num2 = input("指数計算したい指数の数値を入力してください: ")
-    if num1.isdecimal() and num2.isdecimal():
+    if is_numeric(num1) and is_numeric(num2):
         result = float(num1) ** float(num2)
         print(f"計算結果 : {num1} ^ {num2} = {result} ") 
         return result
     else:
-        return "入力値が正しくありません"
+        print("入力値が正しくありません")
     
 def is_numeric(s):
     try:
