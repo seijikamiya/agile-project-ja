@@ -1,3 +1,5 @@
+import math
+
 def add():
     """
     ユーザーに2つの数値を入力してもらい、その合計を算出する
@@ -19,6 +21,16 @@ def subtract():
     print(f"計算結果 : {num1} - {num2} = {result} ") 
     
     return result
+
+def root():
+    """
+    ユーザーに値を入力してもらい、平方根を返す
+    """
+    num = float(input("平方根を求めたい数値を入力してください: "))
+    result = math.sqrt(num)
+    print(f"計算結果 : √{num} = {result} ") 
+
+    return math.sqrt(num)
 
 def calculator():
     """
@@ -56,6 +68,9 @@ def calculator():
             num2 = float(input("除算する次の数値を入力してください: "))
             result = num1 / num2
             print(f"計算結果 : {num1} / {num2} = {result} ") 
+
+        elif choice == "6":
+            result = root()
 
         else:
             print("無効な入力です。")
