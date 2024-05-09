@@ -4,12 +4,14 @@ def add():
     """
     ユーザーに2つの数値を入力してもらい、その合計を算出する
     """
-    num1 = float(input("加算する最初の数値を入力してください: "))
-    num2 = float(input("加算する次の数値を入力してください: "))
-    result = num1 + num2
-    print(f"計算結果 : {num1} + {num2} = {result} ")
-
-    return result
+    num1 = input("加算する最初の数値を入力してください: ")
+    num2 = input("加算する次の数値を入力してください: ")
+    if is_numeric(num1) and is_numeric(num2):
+        result = float(num1) + float(num2)
+        print(f"計算結果 : {num1} + {num2} = {result} ")
+        return result
+    else:
+        print("入力値が正しくありません")
 
 def subtract():
     """
@@ -26,11 +28,15 @@ def root():
     """
     ユーザーに値を入力してもらい、平方根を返す
     """
-    num = float(input("平方根を求めたい数値を入力してください: "))
-    result = math.sqrt(num)
-    print(f"計算結果 : √{num} = {result} ") 
-
-    return math.sqrt(num)
+    num = input("平方根を求めたい数値を入力してください: ")
+    if not is_numeric(num):
+        print("入力値が正しくありません")
+    elif float(num) < 0:
+        print("入力値が正しくありません。正の値を入力して下さい")
+    else:
+        result = math.sqrt(float(num))
+        print(f"計算結果 : √{num} = {result} ") 
+        return result
 
 def multi():
     """
@@ -57,6 +63,13 @@ def exp():
         return result
     else:
         return "入力値が正しくありません"
+    
+def is_numeric(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
 def calculator():
     """
