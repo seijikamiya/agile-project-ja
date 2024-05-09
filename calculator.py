@@ -35,7 +35,7 @@ def calculator():
             break
 
         elif choice == "1":
-            add()
+            result = add()
 
         elif   choice == "4" :
             num1 = float(input("除算する最初の数値を入力してください: "))
