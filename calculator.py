@@ -43,7 +43,7 @@ def multi():
         print(f"計算結果 : {num1} * {num2} = {result} ") 
         return result
     else:
-        return "入力値が正しくありません"
+        print("入力値が正しくありません")
 
 def exp():
     """
@@ -56,7 +56,7 @@ def exp():
         print(f"計算結果 : {num1} ^ {num2} = {result} ") 
         return result
     else:
-        return "入力値が正しくありません"
+        print("入力値が正しくありません")
 
 def calculator():
     """
