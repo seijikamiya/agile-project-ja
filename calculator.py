@@ -17,12 +17,14 @@ def subtract():
     """
     ユーザーに２つの数値を入力してもらい、それを減算する。
     """
-    num1 = float(input("引かれる数値を入力してください: "))
-    num2 = float(input("引く数値を入力してください: "))
-    result = num1 - num2
-    print(f"計算結果 : {num1} - {num2} = {result} ") 
-    
-    return result
+    num1 = input("引かれる数値を入力してください: ")
+    num2 = input("引く数値を入力してください: ")
+    if is_numeric(num1) and is_numeric(num2):
+        result = float(num1) - float(num2)
+        print(f"計算結果 : {num1} - {num2} = {result} ")
+        return result
+    else:
+        print("入力値が正しくありません")
 
 def root():
     """
