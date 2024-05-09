@@ -32,6 +32,31 @@ def root():
 
     return math.sqrt(num)
 
+def multi():
+    num1 = input("乗算される最初の数値を入力してください: ")
+    num2 = input("乗算する次の数値を入力してください: ")
+    if num1.isdecimal() and num2.isdecimal():
+        result = float(num1) * float(num2)
+        print(f"計算結果 : {num1} * {num2} = {result} ") 
+        return result
+    else:
+        return "入力値が正しくありません"
+
+def exp():
+    num1 = input("指数計算したい底の数値を入力してください: ")
+    num2 = input("指数計算したい指数の数値を入力してください: ")
+    if num1.isdecimal() and num2.isdecimal():
+        result = float(num1) ** float(num2)
+        print(f"計算結果 : {num1} ^ {num2} = {result} ") 
+        return result
+    else:
+        return "入力値が正しくありません"
+
+# 途中テスト用
+# num1 = input("please input first number: ")
+# num2 = input("please input second number: ")
+# print(multi(num1,num2))
+
 def calculator():
     """
     計算機能を提供するプログラム
@@ -57,17 +82,23 @@ def calculator():
             print("計算アプリを終了します。")
             break
 
-        elif choice == "1":
+        elif choice == "1" :
             result = add()
         
-        elif   choice == "2" :
-            result = subtract() 
+        elif choice == "2" :
+            result = subtract()
 
-        elif   choice == "4" :
+        elif choice == "3" :
+            result = multi()
+
+        elif choice == "4" :
             num1 = float(input("除算する最初の数値を入力してください: "))
             num2 = float(input("除算する次の数値を入力してください: "))
             result = num1 / num2
-            print(f"計算結果 : {num1} / {num2} = {result} ") 
+            print(f"計算結果 : {num1} / {num2} = {result} ")
+
+        elif choice == "5" :
+            result = exp()
 
         elif choice == "6":
             result = root()
