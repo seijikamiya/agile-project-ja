@@ -8,8 +8,8 @@ def add():
     print(f"計算結果 : {num1} + {num2} = {result} ")
 
     return result
-  
- def subtract():
+
+def subtract():
     """
     ユーザーに２つの数値を入力してもらい、それを減算する。
     """
@@ -44,7 +44,7 @@ def calculator():
         if choice == "0":
             print("計算アプリを終了します。")
             break
-      
+
         elif choice == "1":
             result = add()
         
