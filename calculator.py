@@ -33,6 +33,9 @@ def root():
     return math.sqrt(num)
 
 def multi():
+    """
+    ユーザーに値を入力してもらい、乗算を返す
+    """
     num1 = input("乗算される最初の数値を入力してください: ")
     num2 = input("乗算する次の数値を入力してください: ")
     if num1.isdecimal() and num2.isdecimal():
@@ -43,6 +46,9 @@ def multi():
         return "入力値が正しくありません"
 
 def exp():
+    """
+    ユーザーに値を入力してもらい、指数計算を返す
+    """
     num1 = input("指数計算したい底の数値を入力してください: ")
     num2 = input("指数計算したい指数の数値を入力してください: ")
     if num1.isdecimal() and num2.isdecimal():
@@ -51,11 +57,6 @@ def exp():
         return result
     else:
         return "入力値が正しくありません"
-
-# 途中テスト用
-# num1 = input("please input first number: ")
-# num2 = input("please input second number: ")
-# print(multi(num1,num2))
 
 def calculator():
     """
