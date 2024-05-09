@@ -65,6 +65,14 @@ def exp():
         print("入力値が正しくありません")
     
 def is_numeric(s):
+    """文字列が数値かを判定する関数
+
+    Args:
+        s (str): 判定する文字列
+
+    Returns:
+        文字列が数値の場合はTrue, それ以外の場合はFalse
+    """
     try:
         float(s)
         return True
