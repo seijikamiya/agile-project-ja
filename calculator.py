@@ -8,6 +8,17 @@ def add():
     print(f"計算結果 : {num1} + {num2} = {result} ")
 
     return result
+  
+ def subtract():
+    """
+    ユーザーに２つの数値を入力してもらい、それを減算する。
+    """
+    num1 = float(input("引かれる数値を入力してください: "))
+    num2 = float(input("引く数値を入力してください: "))
+    result = num1 - num2
+    print(f"計算結果 : {num1} - {num2} = {result} ") 
+    
+    return result
 
 def calculator():
     """
@@ -33,9 +44,12 @@ def calculator():
         if choice == "0":
             print("計算アプリを終了します。")
             break
-
+      
         elif choice == "1":
             result = add()
+        
+        elif   choice == "2" :
+            result = subtract() 
 
         elif   choice == "4" :
             num1 = float(input("除算する最初の数値を入力してください: "))
