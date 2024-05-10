@@ -71,23 +71,22 @@ def calculate_twice(result):
     ユーザーに処理したい演算と値を入力してもらい、直前の演算結果に対する演算結果を返す（演算は、加算・減算・乗算・除算の中から選択）
     """
     sub_choice = input("演算項目を選択してください(1-4): ")
+    pre_result = result
     if sub_choice in ["1", "2", "3", "4"]:
         num = input("演算を行う数値を入力してください: ")
-        pre_result = result
         if is_numeric(num):
             if sub_choice == "1":
-                result = pre_result + float(num)
+                result += float(num)
             elif sub_choice == "2":
-                result = pre_result - float(num)
+                result -= float(num)
             elif sub_choice == "3":
-                result = pre_result * float(num)
+                result *= float(num)
             elif sub_choice == "4":
-                result = pre_result / float(num)
+                result /= float(num)
             print(f"計算結果 : 直前の結果 {pre_result} に対する演算 {sub_choice} を行った結果 = {result}")
             return result
-
-    else:
-        print("入力値が正しくありません")
+        else:
+            print("入力値が正しくありません")
     
 def is_numeric(s):
     """文字列が数値かを判定する関数
