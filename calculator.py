@@ -1,5 +1,4 @@
 import math
-from decimal import Decimal
 
 def add():
     """
