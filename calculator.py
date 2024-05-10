@@ -58,9 +58,13 @@ def div():
     num1 = input("除算する最初の数値を入力してください: ")
     num2 = input("除算する次の数値を入力してください: ")
     if is_numeric(num1) and is_numeric(num2):
-            result = float(num1) / float(num2)
-            print(f"計算結果 : {num1} / {num2} = {result} ")
-            return result
+        if float(num2) == 0:
+            print("0で割ることはできません")
+            return
+        
+        result = float(num1) / float(num2)
+        print(f"計算結果 : {num1} / {num2} = {result} ")
+        return result
     else:
         print("入力値が正しくありません")
 
