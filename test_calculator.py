@@ -73,8 +73,6 @@ def test_root_case2(mock_input):
 def test_root_case3(mock_input):
     assert root() == None
 
-
-
 #test for is_numeric function
 def test_is_numeric_case1():
     assert is_numeric('4') == True
