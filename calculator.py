@@ -47,7 +47,7 @@ def multi():
     num1 = input("乗算される最初の数値を入力してください: ")
     num2 = input("乗算する次の数値を入力してください: ")
     if is_numeric(num1) and is_numeric(num2):
-        result = float(num1) * float(num2)
+        result = round((float(num1) * float(num2)),5)
         print(f"計算結果 : {num1} * {num2} = {result} ") 
         return result
     else:
