@@ -52,6 +52,23 @@ def multi():
         return result
     else:
         print("入力値が正しくありません")
+        
+def div():
+    """
+    ユーザーに値を入力してもらい、除算を返す
+    """
+
+    num1 = input("除算する最初の数値を入力してください: ")
+    num2 = input("除算する次の数値を入力してください: ")
+    if is_numeric(num1) and is_numeric(num2):
+        if float(num2) == 0:
+            print("0で割ることはできません")
+        else:
+            result = float(num1) / float(num2)
+            print(f"計算結果 : {num1} / {num2} = {result} ")
+            return result
+    else:
+        print("入力値が正しくありません")
 
 def exp():
     """
@@ -116,11 +133,8 @@ def calculator():
             result = multi()
 
         elif choice == "4" :
-            num1 = float(input("除算する最初の数値を入力してください: "))
-            num2 = float(input("除算する次の数値を入力してください: "))
-            result = num1 / num2
-            print(f"計算結果 : {num1} / {num2} = {result} ")
-
+            result = div()
+            
         elif choice == "5" :
             result = exp()
 
