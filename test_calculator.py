@@ -1,4 +1,4 @@
-from calculator import add, subtract, root, div, is_numeric
+from calculator import add, subtract, root, div, is_numeric, exp
 from unittest.mock import patch
 
 #Tests for add function
@@ -38,6 +38,31 @@ def test_subtract_case4(mock_input):
 @patch('builtins.input', side_effect=["a", "b"])
 def test_subtract_case5(mock_input):
     assert subtract() == None
+
+#Tests for exp function
+@patch('builtins.input', side_effect=['2', '2'])
+def test_exp_case1(mock_input):
+    assert exp() == 4
+
+@patch('builtins.input', side_effect=["2", "-1"])
+def test_exp_case2(mock_input):
+    assert exp() == 0.5
+
+@patch('builtins.input', side_effect=["-2", "-1"])
+def test_exp_case3(mock_input):
+    assert exp() == -0.5
+
+@patch('builtins.input', side_effect=["0", "2"])
+def test_exp_case4(mock_input):
+    assert exp() == 0
+
+@patch('builtins.input', side_effect=["2", "0"])
+def test_exp_case5(mock_input):
+    assert exp() == 1
+
+@patch('builtins.input', side_effect=["a", "b"])
+def test_exp_case6(mock_input):
+    assert exp() == None
 
 #Tests for root function
 @patch('builtins.input', side_effect=['4'])
