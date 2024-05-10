@@ -1,7 +1,7 @@
-from calculator import add, subtract, root, is_numeric, multi
+from calculator import add, subtract, root, div, is_numeric, exp, multi
 from unittest.mock import patch
 
-#test for add function
+#Tests for add function
 @patch('builtins.input', side_effect=['10', '20'])
 def test_add_case1(mock_input):
     assert add() == 30
@@ -18,7 +18,7 @@ def test_add_case3(mock_input):
 def test_add_case4(mock_input):
     assert add() == None
 
-#test for subtract function
+#Tests for subtract function
 @patch('builtins.input', side_effect=['20', '10'])
 def test_subtract_case1(mock_input):
     assert subtract() == 10
@@ -39,7 +39,7 @@ def test_subtract_case4(mock_input):
 def test_subtract_case5(mock_input):
     assert subtract() == None
 
-#test for multi function
+#Tests for multi function
 @patch('builtins.input', side_effect=['5', '6'])
 def test_multi_case1(mock_input):
     assert multi() == 30
@@ -60,7 +60,32 @@ def test_multi_case4(mock_input):
 def test_multi_case5(mock_input):
     assert multi() == None
 
-#test for root function
+#Tests for exp function
+@patch('builtins.input', side_effect=['2', '2'])
+def test_exp_case1(mock_input):
+    assert exp() == 4
+
+@patch('builtins.input', side_effect=["2", "-1"])
+def test_exp_case2(mock_input):
+    assert exp() == 0.5
+
+@patch('builtins.input', side_effect=["-2", "-1"])
+def test_exp_case3(mock_input):
+    assert exp() == -0.5
+
+@patch('builtins.input', side_effect=["0", "2"])
+def test_exp_case4(mock_input):
+    assert exp() == 0
+
+@patch('builtins.input', side_effect=["2", "0"])
+def test_exp_case5(mock_input):
+    assert exp() == 1
+
+@patch('builtins.input', side_effect=["a", "b"])
+def test_exp_case6(mock_input):
+    assert exp() == None
+
+#Tests for root function
 @patch('builtins.input', side_effect=['4'])
 def test_root_case1(mock_input):
     assert root() == 2
@@ -73,12 +98,29 @@ def test_root_case2(mock_input):
 def test_root_case3(mock_input):
     assert root() == None
 
-#test for is_numeric function
+#Tests for div function
+@patch('builtins.input', side_effect=['20', '10'])
+def test_div_case1(mock_input):
+    assert div() == 2
+
+@patch('builtins.input', side_effect=["-3.2", "2"])
+def test_div_case2(mock_input):
+    assert div() == -1.6
+
+@patch('builtins.input', side_effect=["10", "0"])
+def test_div_case3(mock_input):
+    assert div() == None
+
+@patch('builtins.input', side_effect=["a", "b"])
+def test_div_case4(mock_input):
+    assert div() == None
+
+#Tests for is_numeric function
 def test_is_numeric_case1():
     assert is_numeric('4') == True
 
 def test_is_numeric_case2():
-    assert is_numeric('4') == True
+    assert is_numeric('-3.1') == True
 
 def test_is_numeric_case3():
     assert is_numeric("e") == False
