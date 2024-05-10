@@ -66,7 +66,7 @@ def exp():
     else:
         print("入力値が正しくありません")
 
-def calculate_twice():
+def calculate_twice(result):
     """
     ユーザーに処理したい演算と値を入力してもらい、直前の演算結果に対する演算結果を返す（演算は、加算・減算・乗算・除算の中から選択）
     """
@@ -76,14 +76,14 @@ def calculate_twice():
         pre_result = result
         if is_numeric(num):
             if sub_choice == "1":
-                result = pre_result + num
+                result = pre_result + float(num)
             elif sub_choice == "2":
-                result = pre_result - num
+                result = pre_result - float(num)
             elif sub_choice == "3":
-                result = pre_result * num
+                result = pre_result * float(num)
             elif sub_choice == "4":
-                result = pre_result / num
-            print(f"計算結果 : 直前の結果 {result} に対する演算 {sub_choice} を行った結果 = {result}")
+                result = pre_result / float(num)
+            print(f"計算結果 : 直前の結果 {pre_result} に対する演算 {sub_choice} を行った結果 = {result}")
             return result
 
     else:
@@ -151,7 +151,7 @@ def calculator():
             result = root()
         
         elif choice == "7":
-            result = calculate_twice()
+            result = calculate_twice(result)
 
         else:
             print("無効な入力です。")
