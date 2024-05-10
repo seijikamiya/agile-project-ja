@@ -55,10 +55,10 @@ def div():
     ユーザーに値を入力してもらい、除算を返す
     """
 
-    num1 = float(input("除算する最初の数値を入力してください: "))
-    num2 = float(input("除算する次の数値を入力してください: "))
+    num1 = input("除算する最初の数値を入力してください: ")
+    num2 = input("除算する次の数値を入力してください: ")
     if is_numeric(num1) and is_numeric(num2):
-            result = num1 / num2
+            result = float(num1) / float(num2)
             print(f"計算結果 : {num1} / {num2} = {result} ")
             return result
     else:
