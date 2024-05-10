@@ -17,12 +17,14 @@ def subtract():
     """
     ユーザーに２つの数値を入力してもらい、それを減算する。
     """
-    num1 = float(input("引かれる数値を入力してください: "))
-    num2 = float(input("引く数値を入力してください: "))
-    result = num1 - num2
-    print(f"計算結果 : {num1} - {num2} = {result} ") 
-    
-    return result
+    num1 = input("引かれる数値を入力してください: ")
+    num2 = input("引く数値を入力してください: ")
+    if is_numeric(num1) and is_numeric(num2):
+        result = float(num1) - float(num2)
+        print(f"計算結果 : {num1} - {num2} = {result} ")
+        return result
+    else:
+        print("入力値が正しくありません")
 
 def root():
     """
@@ -44,17 +46,12 @@ def multi():
     """
     num1 = input("乗算される最初の数値を入力してください: ")
     num2 = input("乗算する次の数値を入力してください: ")
-    if not num1.isdecimal() and not num2.isdecimal():
-        try:
-            result = float(num1) * float(num2)
-            print(f"計算結果 : {num1} * {num2} = {result} ") 
-            return result
-        except ValueError:
-            print("入力値が正しくありません")
-    else:
+    if is_numeric(num1) and is_numeric(num2):
         result = float(num1) * float(num2)
         print(f"計算結果 : {num1} * {num2} = {result} ") 
         return result
+    else:
+        print("入力値が正しくありません")
 
 def exp():
     """
@@ -62,17 +59,27 @@ def exp():
     """
     num1 = input("指数計算したい底の数値を入力してください: ")
     num2 = input("指数計算したい指数の数値を入力してください: ")
-    if not num1.isdecimal() and not num2.isdecimal():
-        try:
-            result = float(num1) ** float(num2)
-            print(f"計算結果 : {num1} ^ {num2} = {result} ") 
-            return result
-        except ValueError:
-            print("入力値が正しくありません")
-    else:
+    if is_numeric(num1) and is_numeric(num2):
         result = float(num1) ** float(num2)
         print(f"計算結果 : {num1} ^ {num2} = {result} ") 
         return result
+    else:
+        print("入力値が正しくありません")
+    
+def is_numeric(s):
+    """文字列が数値かを判定する関数
+
+    Args:
+        s (str): 判定する文字列
+
+    Returns:
+        文字列が数値の場合はTrue, それ以外の場合はFalse
+    """
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
 def calculator():
     """
