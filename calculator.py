@@ -73,17 +73,18 @@ def calculate_twice():
     sub_choice = input("演算項目を選択してください(1-4): ")
     if sub_choice in ["1", "2", "3", "4"]:
         num = input("演算を行う数値を入力してください: ")
+        pre_result = result
         if is_numeric(num):
             if sub_choice == "1":
-                result += num
-        elif sub_choice == "2":
-            result -= num
-        elif sub_choice == "3":
-            result *= num
-        elif sub_choice == "4":
-            result /= num
-        print(f"計算結果 : 直前の結果 {result} に対する演算 {sub_choice} を行った結果 = {result}")
-        return result
+                result = pre_result + num
+            elif sub_choice == "2":
+                result = pre_result - num
+            elif sub_choice == "3":
+                result = pre_result * num
+            elif sub_choice == "4":
+                result = pre_result / num
+            print(f"計算結果 : 直前の結果 {result} に対する演算 {sub_choice} を行った結果 = {result}")
+            return result
 
     else:
         print("入力値が正しくありません")
