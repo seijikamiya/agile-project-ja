@@ -50,6 +50,7 @@ def multi():
         return result
     else:
         print("入力値が正しくありません")
+        
 def div():
     """
     ユーザーに値を入力してもらい、除算を返す
@@ -60,11 +61,10 @@ def div():
     if is_numeric(num1) and is_numeric(num2):
         if float(num2) == 0:
             print("0で割ることはできません")
-            return
-        
-        result = float(num1) / float(num2)
-        print(f"計算結果 : {num1} / {num2} = {result} ")
-        return result
+        else:
+            result = float(num1) / float(num2)
+            print(f"計算結果 : {num1} / {num2} = {result} ")
+            return result
     else:
         print("入力値が正しくありません")
 
