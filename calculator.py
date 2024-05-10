@@ -104,6 +104,8 @@ def calculate_twice(result):
             return result
         else:
             print("入力値が正しくありません")
+    else:
+        print("入力値が正しくありません")
     
 def is_numeric(s):
     """文字列が数値かを判定する関数
@@ -126,7 +128,7 @@ def calculator():
     """
     # 直前の計算結果を保持するための変数
     
-    result = 0
+    result = None
 
     while True:
         print("計算メニュー：")
@@ -164,7 +166,10 @@ def calculator():
             result = root()
         
         elif choice == "7":
-            result = calculate_twice(result)
+            if result != None:
+                result = calculate_twice(result)
+            else:
+                print("直前の結果が存在しません")
 
         else:
             print("無効な入力です。")
